@@ -42,6 +42,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, readonly, strong) UILabel *dateLabel;
 
+@property (nonatomic, readonly, strong) UIImageView *selectedDayImageView;
+@property (nonatomic, readonly, strong) UIImageView *overlayImageView;
+@property (nonatomic, readonly, strong) UIImageView *markImageView;
+@property (nonatomic, readonly, strong) UIImageView *dividerImageView;
+
 ///--------------------------------------
 /// @name Accessing Attributes of the Day
 ///--------------------------------------
@@ -94,6 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
  The mark image for the cell of the day. The default mark image is a small round mark.
  */
 @property (nonatomic, strong, nullable) UIImage *markImage;
+
 
 ///---------------------------------------
 /// @name Accessing Attributes of the View

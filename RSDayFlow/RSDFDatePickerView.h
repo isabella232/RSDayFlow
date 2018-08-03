@@ -88,6 +88,32 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, getter = isPagingEnabled) BOOL pagingEnabled;
 
+
+///-------------------------
+/// @name Accessing Subviews
+///-------------------------
+
+/**
+ The from Date
+ */
+@property (nonatomic, readonly, strong) NSDate *fromDate;
+
+/**
+ The to Date
+ */
+@property (nonatomic, readonly, strong) NSDate *toDate;
+
+/**
+ The start Date
+ */
+@property (nonatomic, readonly, strong) NSDate *startDate;
+
+/**
+ The end Date
+ */
+@property (nonatomic, readonly, strong) NSDate *endDate;
+
+
 ///----------------------------
 /// @name Scrolling to the Date
 ///----------------------------
@@ -123,6 +149,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 - (void)selectDate:(nullable NSDate *)date;
+
+
+/**
+ @param Restore the selected date as necessary
+ */
+- (void)restoreSelection;
 
 ///-------------------------
 /// @name Reloading the Data

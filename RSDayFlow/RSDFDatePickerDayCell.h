@@ -271,6 +271,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (CGRect)selectedImageViewFrame;
 
+/**
+ Default marker rectangle.
+ 
+ @discussion Can be overridden in subclasses for customization.
+*/
+- (CGRect)markImageViewFrame;
+
 @end
 
 NS_ASSUME_NONNULL_END

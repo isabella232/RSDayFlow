@@ -46,15 +46,6 @@ static NSString * const RSDFDatePickerViewDayCellIdentifier = @"RSDFDatePickerVi
 @property (nonatomic, readonly, assign) NSUInteger daysInWeek;
 @property (nonatomic, readonly, strong) NSDate *selectedDate;
 
-// From and to date are the currently displayed dates in the calendar.
-// These values change in infinite scrolling mode.
-@property (nonatomic, readonly, strong) NSDate *fromDate;
-@property (nonatomic, readonly, strong) NSDate *toDate;
-
-// Start and end date are date limits displayed in the calendar (no infinite scrolling).
-@property (nonatomic, readonly, strong) NSDate *startDate;
-@property (nonatomic, readonly, strong) NSDate *endDate;
-
 @end
 
 @implementation RSDFDatePickerView

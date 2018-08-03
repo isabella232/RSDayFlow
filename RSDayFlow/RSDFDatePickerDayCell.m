@@ -34,11 +34,6 @@ CGFloat roundOnBase(CGFloat x, CGFloat base) {
 + (NSCache *)imageCache;
 + (id)fetchObjectForKey:(id)key withCreator:(id(^)(void))block;
 
-@property (nonatomic, readonly, strong) UIImageView *selectedDayImageView;
-@property (nonatomic, readonly, strong) UIImageView *overlayImageView;
-@property (nonatomic, readonly, strong) UIImageView *markImageView;
-@property (nonatomic, readonly, strong) UIImageView *dividerImageView;
-
 @end
 
 @implementation RSDFDatePickerDayCell

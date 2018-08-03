@@ -94,22 +94,24 @@ NS_ASSUME_NONNULL_BEGIN
 ///-------------------------
 
 /**
- The from Date
+ The from date are the currently displayed dates in the calendar.
+ This values change in infinite scrolling mode.
  */
 @property (nonatomic, readonly, strong) NSDate *fromDate;
 
 /**
- The to Date
+ The to date are the currently displayed dates in the calendar.
+ This values change in infinite scrolling mode.
  */
 @property (nonatomic, readonly, strong) NSDate *toDate;
 
 /**
- The start Date
+ // The start and end date are date limits displayed in the calendar (no infinite scrolling).
  */
 @property (nonatomic, readonly, strong) NSDate *startDate;
 
 /**
- The end Date
+ The end date are date limits displayed in the calendar (no infinite scrolling).
  */
 @property (nonatomic, readonly, strong) NSDate *endDate;
 

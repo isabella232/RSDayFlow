@@ -39,8 +39,7 @@ static NSString * const RSDFDatePickerViewDayCellIdentifier = @"RSDFDatePickerVi
 @interface RSDFDatePickerView () <RSDFDatePickerCollectionViewDelegate>
 
 @property (nonatomic, readonly, strong) NSCalendar *calendar;
-@property (nonatomic, readonly, strong) RSDFDatePickerDaysOfWeekView *daysOfWeekView;
-@property (nonatomic, readonly, strong) RSDFDatePickerCollectionView *collectionView;
+
 @property (nonatomic, readonly, strong) RSDFDatePickerCollectionViewLayout *collectionViewLayout;
 @property (nonatomic, readonly, strong) NSDate *today;
 @property (nonatomic, readonly, assign) NSUInteger daysInWeek;

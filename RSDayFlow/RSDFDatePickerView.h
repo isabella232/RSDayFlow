@@ -117,6 +117,21 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, strong) NSDate *endDate;
 
 /**
+ Subclass access to the today
+ */
+@property (nonatomic, readonly, strong) NSDate *today;
+
+/**
+ Subclass access to the daysInWeek
+ */
+@property (nonatomic, readonly, assign) NSUInteger daysInWeek;
+
+/**
+ Subclass access to the selectedDate
+ */
+@property (nonatomic, readonly, strong) NSDate *selectedDate;
+
+/**
  Subclass access to the calendar daysOfWeekView
  */
 @property (nonatomic, readonly, strong) RSDFDatePickerDaysOfWeekView *daysOfWeekView;

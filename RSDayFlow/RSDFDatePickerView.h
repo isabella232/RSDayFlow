@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol RSDFDatePickerViewDelegate;
 @protocol RSDFDatePickerViewDataSource;
-@class RSDFDatePickerDaysOfWeekView;
+@class RSDFDatePickerDaysOfWeekView, RSDFDatePickerCollectionView;
 
 /**
  The `RSDFDatePickerView` is a calendar view with infinity scrolling.

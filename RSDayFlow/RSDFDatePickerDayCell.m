@@ -292,17 +292,15 @@ CGFloat roundOnBase(CGFloat x, CGFloat base) {
 - (UIImage *)ellipseImageWithKey:(NSString *)key frame:(CGRect)frame color:(UIColor *)color stroke: (UIColor *)stroke
 {
     UIImage *ellipseImage = [[self class] fetchObjectForKey:key withCreator:^id{
+        UIGraphicsBeginImageContextWithOptions(frame.size, NO, self.window.screen.scale);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
         CGRect rect = frame;
+        rect.origin = CGPointZero;
         
         if (stroke != nil) {
             rect = CGRectInset(rect, 0.5, 0.5);
         }
-        
-        UIGraphicsBeginImageContextWithOptions(rect.size, NO, self.window.screen.scale);
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        
-        
-        rect.origin = CGPointZero;
         
         CGContextSetFillColorWithColor(context, color.CGColor);
         CGContextFillEllipseInRect(context, rect);

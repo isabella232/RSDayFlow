@@ -132,7 +132,7 @@ CGFloat roundOnBase(CGFloat x, CGFloat base) {
 {
     if (!_markImage) {
         NSString *markImageKey = [NSString stringWithFormat:@"img_mark_%@", [self.markImageColor description]];
-        _markImage = [self ellipseImageWithKey:markImageKey frame:self.markImageView.frame color:self.markImageColor];
+        _markImage = [self ellipseImageWithKey:markImageKey frame:self.markImageView.frame color:self.markImageColor stroke: [UIColor whiteColor]];
     }
     return _markImage;
 }
@@ -286,6 +286,11 @@ CGFloat roundOnBase(CGFloat x, CGFloat base) {
 
 - (UIImage *)ellipseImageWithKey:(NSString *)key frame:(CGRect)frame color:(UIColor *)color
 {
+    return [self ellipseImageWithKey:key frame: frame color: color stroke: nil];
+}
+
+- (UIImage *)ellipseImageWithKey:(NSString *)key frame:(CGRect)frame color:(UIColor *)color stroke: (UIColor *)stroke
+{
     UIImage *ellipseImage = [[self class] fetchObjectForKey:key withCreator:^id{
         UIGraphicsBeginImageContextWithOptions(frame.size, NO, self.window.screen.scale);
         CGContextRef context = UIGraphicsGetCurrentContext();
@@ -295,6 +300,12 @@ CGFloat roundOnBase(CGFloat x, CGFloat base) {
         
         CGContextSetFillColorWithColor(context, color.CGColor);
         CGContextFillEllipseInRect(context, rect);
+        
+        if (stroke != nil) {
+            CGContextSetStrokeColorWithColor(context, stroke.CGColor);
+            CGContextSetLineWidth(context, 0.5);
+            CGContextStrokeEllipseInRect(context, rect);
+        }
         
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();

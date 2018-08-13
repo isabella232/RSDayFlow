@@ -96,6 +96,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) UIColor *markImageColor;
 
 /**
+ The 0.5 width stroke color of the default mark image for the cell of the day. Default value is no stroke.
+ 
+ @discussion Will be used to create the mark image if `markImage` is equal to `nil`.
+ */
+@property (nonatomic, copy) UIColor *markImageStrokeColor;
+
+/**
  The mark image for the cell of the day. The default mark image is a small round mark.
  */
 @property (nonatomic, strong, nullable) UIImage *markImage;

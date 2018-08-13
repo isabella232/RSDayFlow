@@ -43,6 +43,7 @@ CGFloat roundOnBase(CGFloat x, CGFloat base) {
 @synthesize overlayImageView = _overlayImageView;
 @synthesize markImage = _markImage;
 @synthesize markImageColor = _markImageColor;
+@synthesize markImageStrokeColor = _markImageStrokeColor;
 @synthesize markImageView = _markImageView;
 @synthesize dividerImageView = _dividerImageView;
 
@@ -132,7 +133,7 @@ CGFloat roundOnBase(CGFloat x, CGFloat base) {
 {
     if (!_markImage) {
         NSString *markImageKey = [NSString stringWithFormat:@"img_mark_%@", [self.markImageColor description]];
-        _markImage = [self ellipseImageWithKey:markImageKey frame:self.markImageView.frame color:self.markImageColor stroke: [UIColor whiteColor]];
+        _markImage = [self ellipseImageWithKey:markImageKey frame:self.markImageView.frame color:self.markImageColor stroke: self.markImageStrokeColor];
     }
     return _markImage;
 }
@@ -143,6 +144,11 @@ CGFloat roundOnBase(CGFloat x, CGFloat base) {
         _markImageColor = [UIColor colorWithRed:184/255.0f green:184/255.0f blue:184/255.0f alpha:1.0f];
     }
     return _markImageColor;
+}
+
+- (UIColor *)markImageStrokeColor
+{
+    return _markImageStrokeColor;
 }
 
 - (UIImageView *)markImageView
@@ -198,6 +204,16 @@ CGFloat roundOnBase(CGFloat x, CGFloat base) {
 {
     if (![_markImageColor isEqual:markImageColor]) {
         _markImageColor = markImageColor;
+        _markImage = nil;
+        
+        [self setNeedsDisplay];
+    }
+}
+
+- (void)setMarkImageStrokeColor:(UIColor *)markImageStrokeColor
+{
+    if (![_markImageStrokeColor isEqual:markImageStrokeColor]) {
+        _markImageStrokeColor = markImageStrokeColor;
         _markImage = nil;
         
         [self setNeedsDisplay];
